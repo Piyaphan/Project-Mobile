@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+
+<head>
+    <title>Movice World</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/slider.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body background="w3s.png">
+    <div class="wrap">
+        <div class="header_top">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="Cinque Terre" width="200" height="200" align="right" /></a>
+            </div>
+        </div>
+    </div>
+    <div class="header_top_center">
+        <div class="container">
+            <div class="jumbotron">
+                <form id="searchForm">
+                    <div class="input-group">
+                        <input type="text" class="form-control " id="searchText" placeholder="Search Movies...">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function DropDown(el) {
+            this.dd = el;
+            this.initEvents();
+        }
+        DropDown.prototype = {
+            initEvents: function() {
+                var obj = this;
+
+                obj.dd.on('click', function(event) {
+                    $(this).toggleClass('active');
+                    event.stopPropagation();
+                });
+            }
+        }
+
+        $(function() {
+
+            var dd = new DropDown($('#dd'));
+
+            $(document).click(function() {
+                $('.wrapper-dropdown-2').removeClass('active');
+            });
+
+        });
+    </script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery.slides.min.js"></script>
+    <script>
+        $(function() {
+            $('#slides').slidesjs({
+                width: 940,
+                height: 528
+            });
+        });
+    </script>
+    <div class="clear"></div>
+    <!--END-->
+    <div class="main">
+        <div class="wrap">
+            <div class="content">
+                <div class="section group">
+                    <div id="movies" class="row"></div>
+                    <link rel="stylesheet" href="css/style.css">
+                </div>
+                <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+                <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+                <script src="js/main.js"></script>
+            </div>
+            <div class="copy_right">
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+        });
+    </script>
+    <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+    <script type="text/javascript">
+        $(window).load(function() {
+            $('#slider').nivoSlider();
+        });
+    </script>
+    <a href="#" id="toTop"><span id="toTopHover"> </span></a>
+</body>
+
+</html>
